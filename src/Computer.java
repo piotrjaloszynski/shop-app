@@ -71,6 +71,7 @@ public class Computer {
 
     @Override
     public int hashCode() {
-        return name.hashCode();
+        int hash = name.hashCode();
+        return hash;
     }
 }
