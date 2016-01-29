@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class Menu {
 
     public void menu() {
-        Shop shop = new Shop();
+        ShopBetter shop = new ShopBetter();  // zmieniamy na shopBetter
         Scanner scanner = new Scanner(System.in);
 
         String userInput = "";
 
         displayMenu();
 
-        while (!userInput.equals("q")) {
+        while (!userInput.equals("q")) {// do puki jest rozne od q petla bedzie sie krecic.
 
             System.out.print("Enter your choice: ");
             userInput = scanner.next();
@@ -32,10 +32,13 @@ public class Menu {
                     double cpu = scanner.nextDouble();
 
                     System.out.print("Enter ram: ");
-                    int ram = scanner.nextInt();
+                    int ram = scanner.nextInt();// wczytuje kolejny input od urzytkowwnia
+// scaner bedzie czekac jak wpiszesz w klawiature
+                    Computer computer = new Computer(name, price, cpu, ram);// obojetne Product computer= new Computer (name, price , cpu,ram)
+                    //shop.addComputer(computer); add product zamiast computer !!
+                    shop.addProduct(computer);// bedzie dzialac dlatego ze ko,mputer to jest element produktu
+                    // bedzie akceptowac wszstkie klasy. Poliformiz  w zaleznosci jaki obiekt podajemy obiekt
 
-                    Computer computer = new Computer(name, price, cpu, ram);
-                    shop.addComputer(computer);
                 }
                 break;
                 case "3": {
@@ -44,7 +47,7 @@ public class Menu {
                     String name = scanner.next();
 
                     System.out.print("Enter price: ");
-                    double price = scanner.nextDouble();
+                    double price = scanner.nextDouble();//  jesli price to double zdefi w jacket comp to wywoluje double
 
                     System.out.print("Enter size: ");
                     int size = scanner.nextInt();
@@ -53,7 +56,8 @@ public class Menu {
                     String producer = scanner.next();
 
                     Jacket jacket = new Jacket(name, price, size, producer);
-                    shop.addJacket(jacket);
+                    //shop.addJacket(jacket);
+                    shop.addProduct(jacket);
                 }
                 break;
                 case "m":

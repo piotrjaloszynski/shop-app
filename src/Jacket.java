@@ -1,32 +1,18 @@
-public class Jacket {
-    private String name;
-    private double price;
+public class Jacket extends Product {
+
 
     private int size;
     private String producer;
 
     public Jacket(String name, double price, int size, String producer) {
-        this.price = price;
-        this.name = name;
-        this.size = size;
+       super(price,name); // potrzebne do stworzenia klasy Product ktory jest matka, klasa bazowa
+         this.size = size;
         this.producer = producer;
     }
 
-    public double getPrice() {
-        return price;
-    }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getSize() {
         return size;
@@ -47,7 +33,7 @@ public class Jacket {
     @Override
     public String toString() {
         return "Jacket{" +
-                "price=" + price +
+                "price=" + price + // przestaje swiecic poniewaz klasa bazowa pozwolila zeby dostal.
                 ", name='" + name + '\'' +
                 ", size=" + size +
                 ", producer='" + producer + '\'' +

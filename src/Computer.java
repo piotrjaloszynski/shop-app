@@ -1,32 +1,35 @@
-public class Computer {
-    private String name;
-    private double price;
+public class Computer extends Product  {
+   // private String name;  USUWAMYY
+   // private double price; USUWAMY JAK ROBI DZIEDZICZENIE
 
     private double cpu;
     private int ram;
 
     public Computer(String name, double price, double cpu, int ram) {
-        this.name = name;
-        this.price = price;
+
+  super(price,name);
+       // this.name = name; usuwamy  bo bedzie super
+       // this.price = price;
         this.cpu = cpu;
         this.ram = ram;
     }
 
-    public String getName() {
-        return name;
-    }
+   // public String getName() {
+     //   return name;
+    //}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    //public void setName(String name) {
+      //  this.name = name;
+   // }
 
-    public double getPrice() {
-        return price;
-    }
+    //public double getPrice() {
+    //    return price;
+    //} USUWAMY BO SA  W NASZYM PRODUKCIE
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    //public void setPrice(double price)
+    // //{
+        //this.price = price;
+    //}
 
     public double getCpu() {
         return cpu;
@@ -45,7 +48,7 @@ public class Computer {
     }
 
     @Override
-    public String toString() {
+    public String toString() {// skleja informacje o objekcie nazwe cene cpu.
         return "Computer{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
@@ -63,7 +66,7 @@ public class Computer {
             return false;
         }
 
-        Computer computer = (Computer) o;
+        Computer computer = (Computer) o;// mamy  object rzutujemy na komputer i mamy dostep do jego skladowych
 
         return name.equals(computer.name);
 
