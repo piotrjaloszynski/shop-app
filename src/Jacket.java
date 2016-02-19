@@ -5,13 +5,10 @@ public class Jacket extends Product {
     private String producer;
 
     public Jacket(String name, double price, int size, String producer) {
-       super(price,name); // potrzebne do stworzenia klasy Product ktory jest matka, klasa bazowa
-         this.size = size;
+        super(price, name); // potrzebne do stworzenia klasy Product ktory jest matka, klasa bazowa
+        this.size = size;
         this.producer = producer;
     }
-
-
-
 
 
     public int getSize() {
@@ -29,6 +26,12 @@ public class Jacket extends Product {
     public void setProducer(String producer) {
         this.producer = producer;
     }
+
+    public void discount(){
+        System.out.println("Jacketr: max rabat to 10%");
+
+    }
+
 
     @Override
     public String toString() {

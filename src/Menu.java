@@ -40,7 +40,7 @@ public class Menu {
                     // bedzie akceptowac wszstkie klasy. Poliformiz  w zaleznosci jaki obiekt podajemy obiekt
 
                 }
-                break;
+
                 case "3": {
                     System.out.println("Adding new jacket: ");
                     System.out.print("Enter name: ");
@@ -59,7 +59,48 @@ public class Menu {
                     //shop.addJacket(jacket);
                     shop.addProduct(jacket);
                 }
+
+
+                case "4": {
+                    System.out.println("Adding new phone: ");
+                    System.out.print("Enter name: ");
+                    String name = scanner.next();
+
+                    System.out.print("Enter price: ");
+                    double price = scanner.nextDouble();//  jesli price to double zdefi w jacket comp to wywoluje double
+
+                    System.out.print("Enter size: ");
+                    int size = scanner.nextInt();
+
+                    System.out.print("Enter memot: ");
+                    int memot = scanner.nextInt();
+
+                    Phone phone = new Phone(name, price, size, memot);
+
+                    shop.addProduct(phone);
+
+                }
+
                 break;
+                /*case "5": { NIE TWORZYMY OBIEKTOW KLAS !!!! ABSTRAKCYJNYCH !! NIE DA SIE OTWORZYC
+                    System.out.println("Adding new product: ");
+                    System.out.print("Enter name: ");
+                    String name = scanner.next();
+
+                    System.out.print("Enter price: ");
+                    double price = scanner.nextDouble();//  jesli price to double zdefi w jacket comp to wywoluje double
+
+
+                    //Product product =new Product (price, name); nie mozna dodawac obiektu klasy abstrakcyjnej  , nie
+                    // nie mozna dodac new Prduct();
+
+                    //shop.addProduct(product);
+
+
+                }
+
+                break;
+                */
                 case "m":
                     displayMenu();
                     break;
@@ -74,13 +115,16 @@ public class Menu {
 
             }
         }
+
     }
 
     private void displayMenu() {
         System.out.println("1 - display shop products");
         System.out.println("2 - add computer");
         System.out.println("3 - add jacket");
+        System.out.println("4 - add phone");
         System.out.println("m - display menu");
         System.out.println("q - exit program");
     }
 }
+

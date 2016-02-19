@@ -1,7 +1,7 @@
 /**
  * Created by Gosia on 2016-01-29.
  */
-public class Product {
+public abstract class Product {
 protected double price;// private d;a wszystkich ale public dla klas ktore dziedziczenia - protected
  protected String name;// private dla wszystkich   ale public dla klas ktore dziedzicza - protected
 
@@ -25,4 +25,9 @@ protected double price;// private d;a wszystkich ale public dla klas ktore dzied
     public void setName(String name) {
         this.name = name;
     }
+    public abstract void discount(); // abstrakcyjna metoda nie ma ciala stad nie stosujemy klamerki  bedziemy  wiedzieli w danym produkcie
+
+
+
 }
+

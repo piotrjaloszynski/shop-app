@@ -1,4 +1,4 @@
-public class Computer extends Product  {
+public class Computer extends Product implements ElectronicDevice  { // extends  na pierwszm  najpierw dziedziczmyym a potem implementuje
    // private String name;  USUWAMYY
    // private double price; USUWAMY JAK ROBI DZIEDZICZENIE
 
@@ -13,8 +13,14 @@ public class Computer extends Product  {
         this.cpu = cpu;
         this.ram = ram;
     }
+    public void discount(){
+        System.out.println("Komputer: max rabat to 10%");
 
-   // public String getName() {
+    }
+
+
+
+    // public String getName() {
      //   return name;
     //}
 
@@ -75,5 +81,10 @@ public class Computer extends Product  {
     @Override
     public int hashCode() {
         return name.hashCode();
+    }
+
+    @Override//  implements  nadpisane w klasie
+    public double getVoltage() {
+        return 12;
     }
 }
